@@ -6,3 +6,4 @@ export 'name.dart';
 export 'last_name.dart';
 export 'height.dart';
 export 'weight.dart';
+export 'birth_date.dart';
