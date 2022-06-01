@@ -2,12 +2,13 @@ import 'package:formz/formz.dart';
 
 enum HeigthValidationError { invalid }
 
-class Heigth extends FormzInput<double, HeigthValidationError> {
-  const Heigth.pure() : super.pure(1.70);
-  const Heigth.dirty([double value = 1.70]) : super.dirty(value);
+class Heigth extends FormzInput<int?, HeigthValidationError> {
+  const Heigth.pure() : super.pure(null);
+  const Heigth.dirty([int? value]) : super.dirty(value);
 
   @override
-  HeigthValidationError? validator(double value) {
+  HeigthValidationError? validator(int? value) {
+    if (value == null) return null;
     return value.isNegative || value == 0
         ? HeigthValidationError.invalid
         : null;

@@ -2,12 +2,13 @@ import 'package:formz/formz.dart';
 
 enum WeigthValidationError { invalid }
 
-class Weigth extends FormzInput<double, WeigthValidationError> {
-  const Weigth.pure() : super.pure(40);
-  const Weigth.dirty([double value = 40]) : super.dirty(value);
+class Weight extends FormzInput<double?, WeigthValidationError> {
+  const Weight.pure() : super.pure(null);
+  const Weight.dirty([double? value]) : super.dirty(value);
 
   @override
-  WeigthValidationError? validator(double value) {
+  WeigthValidationError? validator(double? value) {
+    if (value == null) return null;
     return value.isNegative || value == 0
         ? WeigthValidationError.invalid
         : null;
