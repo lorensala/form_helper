@@ -1,6 +1,6 @@
 name: form_helper
 description: A Flutter package that gathers commun value classes.
-version: 1.3.3
+version: 1.3.4
 publish_to: none
 
 environment:
